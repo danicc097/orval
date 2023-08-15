@@ -44,6 +44,7 @@ export const resolveValue = ({
 
     return {
       value: resolvedImport.name,
+      isBrandedType: schemaObject['x-orval-type'] === 'branded',
       imports: [
         {
           name: resolvedImport.name,

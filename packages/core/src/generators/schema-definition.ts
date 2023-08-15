@@ -77,7 +77,17 @@ export const generateSchemasDefinition = (
                   }`
                 : `${resolvedValue.value}Bis`;
 
-              output += `export type ${schemaName} = ${alias};\n`;
+              // if x-orval-type: branded ->
+              // declare const Brand: unique symbol
+              // type Branded<T, B> = T & { [Brand]: B }
+              if (resolvedValue.isBrandedType) {
+                output += `
+declare const Brand: unique symbol
+type Branded<T, B> = T & { [Brand]: B }
+export type ${schemaName} = ${alias};\n`;
+              } else {
+                output += `export type ${schemaName} = Branded<${alias}, "${schemaName}">;\n`;
+              }
 
               imports = imports.map((imp) =>
                 imp.name === schemaName ? { ...imp, alias } : imp,
@@ -85,7 +95,14 @@ export const generateSchemasDefinition = (
             }
           }
         } else {
-          output += `export type ${schemaName} = ${resolvedValue.value};\n`;
+          if (resolvedValue.isBrandedType) {
+            output += `
+declare const Brand: unique symbol
+type Branded<T, B> = T & { [Brand]: B }
+export type ${schemaName} = Branded<${resolvedValue.value}, "${schemaName}">;\n`;
+          } else {
+            output += `export type ${schemaName} = ${resolvedValue.value};\n`;
+          }
         }
 
         acc.push(...resolvedValue.schemas, {

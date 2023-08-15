@@ -711,6 +711,7 @@ export type ScalarValue = {
   imports: GeneratorImport[];
   schemas: GeneratorSchema[];
   isRef: boolean;
+  isBrandedType?: boolean;
 };
 
 export type ResolverValue = ScalarValue & {
