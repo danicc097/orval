@@ -7,6 +7,7 @@
 
 export type DogType = typeof DogType[keyof typeof DogType];
 
+
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const DogType = {
   dog: 'dog',
