@@ -48,7 +48,9 @@ export const generateComponentDefinition = (
         es5IdentifierName: true,
       });
       const doc = jsDoc(response as ResponseObject | RequestBodyObject);
-      const model = `${doc}export type ${modelName} = ${type || 'unknown'};\n`;
+      const model = `${doc}export type ${modelName} = BRANDED${
+        type || 'unknown'
+      };\n`;
 
       acc.push(...schemas);
 

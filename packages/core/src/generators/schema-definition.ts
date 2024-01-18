@@ -69,7 +69,7 @@ export const generateSchemasDefinition = (
             );
 
             if (!imp) {
-              output += `export type ${schemaName} = ${resolvedValue.value};\n`;
+              output += `export type ${schemaName} = HTSHBHHHHHHH${resolvedValue.value};\n`;
             } else {
               const alias = imp?.specKey
                 ? `${pascal(upath.getSpecName(imp.specKey, context.specKey))}${
@@ -101,7 +101,7 @@ declare const Brand: unique symbol
 type Branded<T, B> = T & { [Brand]: B }
 export type ${schemaName} = Branded<${resolvedValue.value}, "${schemaName}">;\n`;
           } else {
-            output += `export type ${schemaName} = ${resolvedValue.value};\n`;
+            output += `export type ${schemaName} = FESFESFESFSE${resolvedValue.value};\n`;
           }
         }
 

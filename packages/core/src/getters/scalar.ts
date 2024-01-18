@@ -97,6 +97,19 @@ export const getScalar = ({
           value = 'Date';
         }
       }
+      console.log(JSON.stringify(item));
+      value = `
+      declare const Brand: unique symbol
+      type Branded<T, B> = T & { [Brand]: B }
+      export type ${name} = Branded<${value}, "${name}">;\n`;
+
+      if (item['x-orval-type'] === 'branded') {
+        console.log('x-orval-type ');
+        value = `
+declare const Brand: unique symbol
+type Branded<T, B> = T & { [Brand]: B }
+export type ${name} = Branded<${value}, "${name}">;\n`;
+      }
 
       return {
         value: value + nullable,

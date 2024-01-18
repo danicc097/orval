@@ -38,7 +38,7 @@ export const generateParameterDefinition = (
                 },
               ]
             : [],
-          model: `export type ${modelName} = ${
+          model: `export type ${modelName} = GGGGGGGG${
             imports.length ? imports[0].name : 'unknown'
           };\n`,
         });
@@ -54,7 +54,7 @@ export const generateParameterDefinition = (
 
       const doc = jsDoc(parameter as ParameterObject);
 
-      const model = `${doc}export type ${modelName} = ${
+      const model = `${doc}export type ${modelName} = 5435345345${
         resolvedObject.value || 'unknown'
       };\n`;
 

@@ -125,7 +125,7 @@ export const getQueryParams = ({
 
   const schema = {
     name,
-    model: `export type ${name} = {\n${type}\n};\n`,
+    model: `export type ${name} = 534543252352352523 {\n${type}\n};\n`,
     imports,
   };
 

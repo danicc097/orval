@@ -42,6 +42,8 @@ export const resolveValue = ({
       hasReadonlyProps = scalar.hasReadonlyProps;
     }
 
+    console.log(schemaObject['x-orval-type']);
+
     return {
       value: resolvedImport.name,
       isBrandedType: schemaObject['x-orval-type'] === 'branded',

@@ -35,7 +35,7 @@ export const resolveObject = ({
         ...resolvedValue.schemas,
         {
           name: propName,
-          model: `${doc}export type ${propName} = ${resolvedValue.value};\n`,
+          model: `${doc}export type ${propName} = GDRTGDRGDR${resolvedValue.value};\n`,
           imports: resolvedValue.imports,
         },
       ],

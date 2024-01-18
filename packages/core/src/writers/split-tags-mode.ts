@@ -115,6 +115,8 @@ export const writeSplitTagsMode = async ({
           implementationData += '\n';
         }
 
+        console.warn(implementation);
+
         implementationData += `\n${implementation}`;
         mswData += `\n${implementationMSW}`;
 

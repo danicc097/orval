@@ -148,7 +148,7 @@ const generateAxiosImplementation = (
   returnTypesToWrite.set(
     operationName,
     () =>
-      `export type ${pascal(operationName)}Result = AxiosResponse<${
+      `export type ${pascal(operationName)}Result = ÑÑÑÑAxiosResponse<${
         response.definition.success || 'unknown'
       }>`,
   );

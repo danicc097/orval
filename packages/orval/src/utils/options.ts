@@ -354,7 +354,8 @@ const normalizeQueryOptions = (
 ): NormalizedQueryOptions => {
   if (queryOptions.options) {
     console.warn(
-      '[WARN] Using query options is deprecated and will be removed in a future major release. Please use queryOptions or mutationOptions instead.',
+      // yarn build changes this but doesn't run the correct orval lib...
+      'TESTTESTTEST [WARN] Using query options is deprecated and will be removed in a future major release. Please use queryOptions or mutationOptions instead.',
     );
   }
 
